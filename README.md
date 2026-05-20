@@ -6,6 +6,28 @@ Each workflow is a standalone `.json` file importable into any n8n instance. A c
 
 ---
 
+## What These Workflows Cover
+
+### AI / LLM Automation
+
+These workflows integrate OpenAI (GPT-4o / GPT-4o-mini) into everyday tools to automate tasks that would otherwise require manual reading, writing, or decision-making.
+
+- **Email summarization** — instead of reading every incoming email in full, the workflow reads it for you and delivers a 3-bullet summary back to your inbox.
+- **Slack Q&A assistant** — any team member can `@mention` your bot in Slack and get an AI-generated answer in the same thread, without leaving the app.
+- **Text classification API** — a single POST endpoint that accepts any text and returns a structured JSON object with topic category, sentiment, confidence score, and a one-sentence summary. Drop it into any pipeline or app.
+- **Automated code review** — when a pull request is opened on GitHub, the workflow fetches the diff, sends it to GPT-4o for analysis, and posts a structured review comment covering bugs, security issues, and style suggestions — before a human even opens the PR.
+
+### DevOps & Engineering
+
+These workflows connect GitHub and your infrastructure to Slack, keeping your team informed in real time without anyone having to watch dashboards or check emails.
+
+- **PR notifications** — the moment a pull request is opened or merged, a formatted Slack message lands in your engineering channel with the author, repo, and lines changed.
+- **CI failure alerts** — when a GitHub Actions run fails, an alert fires immediately to Slack with the branch, the commit message, who triggered the run, and a direct link to the failed run.
+- **Issue auto-labeling** — new GitHub issues are automatically read by OpenAI, which suggests the most relevant labels (`bug`, `security`, `enhancement`, etc.) and applies them via the GitHub API — saving triage time on every issue.
+- **Server health monitoring** — every 5 minutes, the workflow pings a configurable list of URLs (APIs, dashboards, microservices). Any endpoint that returns a non-200 status or times out triggers an immediate Slack alert with the service name and status code.
+
+---
+
 ## Importing a Workflow
 
 1. Open your n8n instance
